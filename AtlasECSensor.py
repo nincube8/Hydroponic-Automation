@@ -1,4 +1,5 @@
-
+#Before running ensure your sensor is setup on the correct I2C Address bus to get readings from your device.
+#This Device requires a 1-5k Resistor if using more than one sensor on the same busline to get readings, and minimize code failure due to inacurate readings.
 
 import io  # used to create file streams
 import fcntl  # used to access I2C parameters like addresses
