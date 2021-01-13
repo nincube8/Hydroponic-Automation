@@ -1,0 +1,76 @@
+#!/usr/bin/python
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BOARD)
+
+# init list with pin numbers
+
+pinList = [7, 11, 13, 15, 19, 21, 29, 31, 33, 35, 37, 40, 38, 36, 32, 22]
+
+# loop through pins and set mode and state to 'low'
+
+for i in pinList:
+    GPIO.setup(i, GPIO.OUT)
+    GPIO.output(i, GPIO.HIGH)
+
+# time to sleep between operations in the main loop
+    SleepTimeL = .1
+# main loop
+try:
+    GPIO.output(7, GPIO.LOW) 
+    print ("(Relay 1) (Pin 7) (PBValve1)")
+    time.sleep(SleepTimeL);
+    GPIO.output(11, GPIO.LOW) 
+    print ("(Relay 2) (Pin 11) (PBValve2)")
+    time.sleep(SleepTimeL);
+    GPIO.output(13, GPIO.LOW) 
+    print ("(Relay 3) (Pin 13) (PBValve3)")
+    time.sleep(SleepTimeL);
+    GPIO.output(15, GPIO.LOW) 
+    print ("(Relay 4) (Pin 15) (PBValve4)")
+    time.sleep(SleepTimeL);
+    GPIO.output(19, GPIO.LOW) 
+    print ("(Relay 5) (Pin 19) (PBValve5)")
+    time.sleep(SleepTimeL);
+    GPIO.output(21, GPIO.LOW) 
+    print ("(Relay 6) (Pin 21) (PBValve6)")
+    time.sleep(SleepTimeL);
+    GPIO.output(29, GPIO.LOW) 
+    print ("(Relay 7) (Pin 29) (WasteValve)")
+    time.sleep(SleepTimeL);
+    GPIO.output(31, GPIO.LOW) 
+    print ("(Relay 8) (Pin 31) (WaterInletValve)")
+    time.sleep(SleepTimeL);
+    GPIO.output(33, GPIO.LOW) 
+    print ("(Relay 9) (Pin 33) (Add PH Down)")
+    time.sleep(SleepTimeL);
+    GPIO.output(35, GPIO.LOW) 
+    print ("(Relay 10) (Pin 35) (Add PH Up)")
+    time.sleep(SleepTimeL);
+    GPIO.output(37, GPIO.LOW) 
+    print ("(Relay 11) (Pin 37) (Part A)")
+    time.sleep(SleepTimeL);
+    GPIO.output(40, GPIO.LOW) 
+    print ("(Relay 12) (Pin 40) (Part B)")
+    time.sleep(SleepTimeL);
+    GPIO.output(38, GPIO.LOW) 
+    print ("(Relay 13) (Pin 38) (CalMag)")
+    time.sleep(SleepTimeL);
+    GPIO.output(36, GPIO.LOW) 
+    print ("(Relay 14) (Pin 36) (Turn on Bucket Pumps Power Strip)")
+    time.sleep(SleepTimeL);
+    GPIO.output(32, GPIO.LOW) 
+    print ("(Relay 15) (Pin 32) (Turn on Feeding Pump)")
+    time.sleep(SleepTimeL);
+    GPIO.output(22, GPIO.LOW) 
+    print ("(Relay 16) (Pin 22) (Turn on Mixing Pump)")
+    time.sleep(SleepTimeL);
+
+    
+# Reset GPIO settings
+    GPIO.cleanup()      
+
+# End program cleanly with keyboard
+except KeyboardInterrupt:
+    print ("  Quit")
